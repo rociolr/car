@@ -1,11 +1,14 @@
 package com.example.car.entity;
 
 
-//@Entity
-//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public  class Vehicle {
+import jakarta.persistence.*;
 
-    {
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public  class Vehicle
+
+    {    @Id
+    @GeneratedValue
         private Integer id;
         private String brand;
         private String model;
@@ -74,8 +77,7 @@ public  class Vehicle {
                     ", year=" + year +
                     ' ';
         }
-    }
 
-    public Vehicle(Integer id, String brand, String model, Integer year) {
-    }
+
+
 }
